@@ -23,7 +23,7 @@ applicable agreement for further details.
 	(input)
 	(rect 128 400 344 416)
 	(text "INPUT" (rect 173 0 201 10)(font "Arial" (font_size 6)))
-	(text "PROGRAM_BYTE[7..0]" (rect 5 0 121 12)(font "Arial" ))
+	(text "PROGRAM_BYTE[7..0]" (rect 5 0 120 12)(font "Arial" ))
 	(pt 216 8)
 	(drawing
 		(line (pt 132 12)(pt 157 12))
@@ -39,7 +39,7 @@ applicable agreement for further details.
 	(input)
 	(rect -144 24 24 40)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "LOAD" (rect 5 0 35 12)(font "Arial" ))
+	(text "LOAD" (rect 5 0 34 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -55,7 +55,7 @@ applicable agreement for further details.
 	(input)
 	(rect -144 80 24 96)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "MIR[35..0]" (rect 5 0 57 12)(font "Arial" ))
+	(text "MIR[35..0]" (rect 5 0 56 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -71,7 +71,7 @@ applicable agreement for further details.
 	(input)
 	(rect 352 -32 520 -16)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLOCK" (rect 5 0 43 12)(font "Arial" ))
+	(text "CLOCK" (rect 5 0 42 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -88,6 +88,22 @@ applicable agreement for further details.
 	(rect 1504 32 1680 48)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "OUT_B[31..0]" (rect 90 0 157 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1592 128 1768 144)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "OUT_MBR[7..0]" (rect 90 0 167 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -600,6 +616,31 @@ applicable agreement for further details.
 		(line (pt 8 8)(pt 24 8))
 	)
 )
+(symbol
+	(rect 584 -88 632 -56)
+	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 21 26 33)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
 (connector
 	(text "MIR[2]" (rect 344 120 377 132)(font "Arial" ))
 	(pt 320 136)
@@ -776,23 +817,6 @@ applicable agreement for further details.
 	(pt 728 -24)
 )
 (connector
-	(pt 648 -72)
-	(pt 624 -72)
-)
-(connector
-	(pt 624 -24)
-	(pt 624 -72)
-)
-(connector
-	(text "<<__$DEF_ALIAS4085>>" (rect 520 -40 643 -28)(font "Arial" )(invisible))
-	(pt 520 -24)
-	(pt 624 -24)
-)
-(connector
-	(pt 624 -24)
-	(pt 728 -24)
-)
-(connector
 	(text "MBRU[31..0]" (rect 1128 240 1191 252)(font "Arial" ))
 	(pt 1120 256)
 	(pt 1208 256)
@@ -838,8 +862,50 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(pt 648 -72)
+	(pt 632 -72)
+)
+(connector
+	(pt 584 -72)
+	(pt 576 -72)
+)
+(connector
+	(pt 576 -72)
+	(pt 576 -24)
+)
+(connector
+	(pt 520 -24)
+	(pt 576 -24)
+)
+(connector
+	(text "<<__$DEF_ALIAS4085>>" (rect 520 -40 643 -28)(font "Arial" )(invisible))
+	(pt 576 -24)
+	(pt 728 -24)
+)
+(connector
+	(text "OUT_MBR[31..0]" (rect 1432 56 1515 68)(font "Arial" ))
+	(pt 1424 56)
+	(pt 1448 56)
+	(bus)
+)
+(connector
+	(text "OUT_MBR[7..0]" (rect 1522 120 1599 132)(font "Arial" ))
+	(pt 1592 136)
+	(pt 1512 136)
+	(bus)
+)
+(connector
+	(pt 1208 136)
+	(pt 1040 136)
+)
+(connector
 	(pt 1040 72)
+	(pt 1040 136)
+)
+(connector
+	(pt 1040 136)
 	(pt 1040 288)
 )
-(junction (pt 624 -24))
 (junction (pt 1472 40))
+(junction (pt 576 -24))
+(junction (pt 1040 136))
